@@ -2,11 +2,11 @@ use crate::etc::Solution;
 use crate::etc::SolutionPair;
 use crate::input_reader;
 
-pub fn part1(input: Vec<i32>) -> i32 {
+pub fn part1(input: &[i32]) -> i32 {
     *input.iter().max().unwrap()
 }
 
-pub fn part2(input: Vec<i32>) -> i32 {
+pub fn part2(input: &[i32]) -> i32 {
     input.iter().take(3).sum()
 }
 
@@ -42,12 +42,9 @@ fn get_elf_calories_summed(elfs: Vec<Vec<i32>>) -> Vec<i32> {
 
 pub fn solve() -> SolutionPair {
     let input = input_reader::read_file_in_cwd("src/day_01_input.txt");
-    println!("==> Loaded input");
-    let transformed_input = get_elf_calories(input);
-    let input_summed = get_elf_calories_summed(transformed_input);
-    println!("==> Transformed input");
-    let elf_with_most_calories = part1(input_summed.clone());
-    let sum_top3_elfs = part2(input_summed);
+    let input_summed = get_elf_calories_summed(get_elf_calories(input));
+    let elf_with_most_calories = part1(&input_summed);
+    let sum_top3_elfs = part2(&input_summed);
     (
         Solution::I32(elf_with_most_calories),
         Solution::I32(sum_top3_elfs),
