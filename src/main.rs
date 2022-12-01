@@ -1,14 +1,33 @@
 mod day_01_calorie_counting;
+mod etc;
 mod input_reader;
+
+use crate::etc::SolutionPair;
+use std::time::Instant;
 
 fn main() {
     let day: String = std::env::args()
         .nth(1)
         .expect("No day given. Possible options are: 01-25.");
-    let day_slice: &str = day.as_str();
+    let day_int = day.parse::<i32>().unwrap();
 
-    match day_slice {
-        "01" => day_01_calorie_counting::run(),
-        _ => println!("No valid day given. Possible options are: 01-25."),
-    };
+    let mut runtime = 0.0;
+    let time = Instant::now();
+
+    let func = get_day_solver(day_int);
+    let (p1, p2) = func();
+    let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
+    runtime += elapsed_ms;
+    println!("=== Day {:02} ===", day_int);
+    println!("  · Part 1: {}", p1);
+    println!("  · Part 2: {}", p2);
+    println!("------------------------------");
+    println!("Total runtime: {:.4} ms", runtime);
+}
+
+fn get_day_solver(day: i32) -> fn() -> SolutionPair {
+    match day {
+        1 => day_01_calorie_counting::solve,
+        _ => unimplemented!(),
+    }
 }
