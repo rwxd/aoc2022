@@ -56,8 +56,6 @@ pub fn run() {
     println!("==> Transformed input");
     let elf_with_most_calories = part1(input_summed.clone());
     println!("Elf with most calories: {:?}", elf_with_most_calories);
-    println!("-----------------------------");
     let sum_top3_elfs = part2(input_summed);
     println!("Sum of top 3 elfs, with most calories: {:?}", sum_top3_elfs);
-    println!("---------------------------------------------");
 }
