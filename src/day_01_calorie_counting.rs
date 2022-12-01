@@ -5,7 +5,7 @@ pub fn part1(input: Vec<i32>) -> i32 {
 }
 
 pub fn part2(input: Vec<i32>) -> i32 {
-    input[0] + input[1] + input[2]
+    input.iter().take(3).sum()
 }
 
 fn get_elf_calories(input: String) -> Vec<Vec<i32>> {
