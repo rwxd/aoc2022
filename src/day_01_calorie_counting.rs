@@ -1,7 +1,7 @@
 use crate::input_reader;
 
 pub fn part1(input: Vec<i32>) -> i32 {
-    input[0]
+    *input.iter().max().unwrap()
 }
 
 pub fn part2(input: Vec<i32>) -> i32 {
