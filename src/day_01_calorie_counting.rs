@@ -10,20 +10,16 @@ pub fn part2(input: Vec<i32>) -> i32 {
 
 fn get_elf_calories(input: String) -> Vec<Vec<i32>> {
     //! Returns vector of elfs with correspondent calories in a vector.
-
-    // Vector of string for each elf with its calories
     let elf_calories_str: Vec<&str> = input.split("\n\n").collect();
-
     let elf_calories: Vec<Vec<i32>> = elf_calories_str
         .iter()
         .map(|&single_elf| {
-            let calories_str: Vec<&str> =
-                single_elf.split('\n').filter(|&x| !x.is_empty()).collect();
-            let calories_int: Vec<i32> = calories_str
-                .iter()
-                .map(|&x| x.parse::<i32>().unwrap())
+            let calories: Vec<i32> = single_elf
+                .split('\n')
+                .filter(|&x| !x.is_empty())
+                .map(|x| x.parse::<i32>().unwrap())
                 .collect();
-            calories_int
+            calories
         })
         .collect();
     elf_calories
@@ -34,13 +30,7 @@ fn get_elf_calories_summed(elfs: Vec<Vec<i32>>) -> Vec<i32> {
     //! It is sorted highest to lowest.
     let mut elfs_total: Vec<i32> = elfs
         .iter()
-        .map(|single_elf| {
-            let mut total_calories_elf = 0;
-            for i in single_elf {
-                total_calories_elf += i;
-            }
-            total_calories_elf
-        })
+        .map(|single_elf| single_elf.iter().sum())
         .collect();
 
     elfs_total.sort();
