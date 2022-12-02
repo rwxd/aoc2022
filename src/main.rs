@@ -1,4 +1,5 @@
 mod day_01_calorie_counting;
+mod day_02_rock_paper_scissors;
 mod etc;
 mod input_reader;
 
@@ -28,6 +29,7 @@ fn main() {
 fn get_day_solver(day: i32) -> fn() -> SolutionPair {
     match day {
         1 => day_01_calorie_counting::solve,
+        2 => day_02_rock_paper_scissors::solve,
         _ => unimplemented!(),
     }
 }
