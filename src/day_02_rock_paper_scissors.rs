@@ -77,8 +77,6 @@ fn get_win_play(input: Play) -> Play {
     answer
 }
 
-// pub fn part2(input: &[i32]) -> i32 {}
-
 fn transform_input_unexplained_games(input: &str) -> Vec<UnexplainedGame> {
     let lines: Vec<&str> = input.split('\n').filter(|&x| !x.is_empty()).collect();
     let input_transformed: Vec<UnexplainedGame> = lines
