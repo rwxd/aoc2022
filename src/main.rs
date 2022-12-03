@@ -14,9 +14,8 @@ fn main() {
     let day_int = day.parse::<i32>().unwrap();
 
     let mut runtime = 0.0;
-    let time = Instant::now();
-
     let func = get_day_solver(day_int);
+    let time = Instant::now();
     let (p1, p2) = func();
     let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
     runtime += elapsed_ms;

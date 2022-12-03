@@ -9,7 +9,7 @@ fn part1(rucksacks: Vec<&str>) -> i32 {
         let (comp1, comp2) = rucksack.split_at(rucksack.len()/2);
         for c in comp1.chars() {
             if comp2.contains(c) {
-                println!("{} => {}", c, char_to_priority(c));
+                // println!("{} => {}", c, char_to_priority(c));
                 priority_items += char_to_priority(c);
                 break
             }
