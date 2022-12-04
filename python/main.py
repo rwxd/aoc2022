@@ -20,11 +20,14 @@ if __name__ == '__main__':
     parser.add_argument('day', help='Day of the Advent of Code')
     args = parser.parse_args()
     day = int(args.day)
+
     solver = get_day_solver(day)
+
     start = datetime.now()
     p1, p2 = solver()
     end = datetime.now()
     milliseconds = round((end - start).total_seconds() * 1000, 4)
+
     print(f"=== Day {day} ===")
     print(f"  . Part 1: {p1}")
     print(f"  . Part 2: {p2}")
