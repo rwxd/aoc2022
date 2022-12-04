@@ -2,12 +2,15 @@ from typing import Callable
 from datetime import datetime
 import argparse
 import day01
+import day02
 
 
 def get_day_solver(day: int) -> Callable[[], tuple[int, int]]:
     match day:
         case 1:
             return day01.solve
+        case 2:
+            return day02.solve
         case _:
             raise ValueError(f"Day {day} not implemented")
 

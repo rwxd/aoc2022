@@ -41,7 +41,7 @@ fn get_elf_calories_summed(elfs: Vec<Vec<i32>>) -> Vec<i32> {
 }
 
 pub fn solve() -> SolutionPair {
-    let input = input_reader::read_file_in_cwd("src/day_01_input.txt");
+    let input = input_reader::read_file_in_cwd("../inputs/day01.txt");
     let input_summed = get_elf_calories_summed(get_elf_calories(input));
     let elf_with_most_calories = part1(&input_summed);
     let sum_top3_elfs = part2(&input_summed);

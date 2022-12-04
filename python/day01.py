@@ -18,6 +18,6 @@ def transform_input(input: str) -> list[int]:
 
 
 def solve() -> Tuple[int, int]:
-    input = open("day01_input.txt").read()
+    input = open("../inputs/day01.txt").read()
     input = transform_input(input)
     return (part1(input), part2(input))

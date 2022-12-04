@@ -126,7 +126,7 @@ fn transform_input_explained_games(input: &str) -> Vec<ExplainedGame> {
 }
 
 pub fn solve() -> SolutionPair {
-    let input = input_reader::read_file_in_cwd("src/day_02_input.txt");
+    let input = input_reader::read_file_in_cwd("../inputs/day02.txt");
     let result_1 = part1(transform_input_unexplained_games(&input));
     let result_2 = part2(transform_input_explained_games(&input));
     (Solution::I32(result_1), Solution::I32(result_2))

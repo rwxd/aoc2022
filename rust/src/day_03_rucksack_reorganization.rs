@@ -42,7 +42,7 @@ fn char_to_priority(item: char) -> i32 {
 }
 
 pub fn solve() -> SolutionPair {
-    let input = input_reader::read_file_in_cwd("src/day_03_input.txt");
+    let input = input_reader::read_file_in_cwd("../inputs/day03.txt");
     let rucksacks: Vec<&str> = input.lines().collect();
     let result_1 = part1(rucksacks.clone());
     let result_2 = part2(rucksacks);
