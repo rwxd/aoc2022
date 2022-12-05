@@ -37,14 +37,14 @@ def get_supply_stacks(input: str) -> SupplyStacks:
     stack_identifier_row = harbor_rows[-1]
 
     stacks = defaultdict(list)
-    for i in reversed(range(0, len(harbor_rows) - 1)):
-        for idx, c in enumerate(harbor_rows[i]):
-            if c.lower() in 'abcdefghijklmnopqrstuvwxyz'.lower():
-                stack_number = int(stack_identifier_row[idx])
-                if stacks.get(stack_number):
-                    stacks[stack_number].append(c)
+    for row in reversed(range(0, len(harbor_rows) - 1)):
+        for column, char in enumerate(harbor_rows[row]):
+            if char.lower() in 'abcdefghijklmnopqrstuvwxyz':
+                stack = int(stack_identifier_row[column])
+                if stacks.get(stack):
+                    stacks[stack].append(char)
                 else:
-                    stacks[stack_number] = [c]
+                    stacks[stack] = [char]
     return stacks
 
 
