@@ -54,10 +54,9 @@ def get_moves(input: str) -> Moves:
     extracted_moves = []
     for mv in moves:
         parts = mv.split(' ')
-        count = int(parts[1])
-        start = int(parts[3])
-        to = int(parts[5])
-        extracted_moves.append(Move(count, start, to))
+        extracted_moves.append(
+            Move(count=int(parts[1]), start=int(parts[3]), to=int(parts[5]))
+        )
     return extracted_moves
 
 
