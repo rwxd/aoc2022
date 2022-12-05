@@ -1,16 +1,19 @@
-from typing import Callable
+from typing import Callable, Union
 from datetime import datetime
 import argparse
 import day01
 import day04
+import day05
 
 
-def get_day_solver(day: int) -> Callable[[], tuple[int, int]]:
+def get_day_solver(day: int) -> Callable[[], tuple[Union[int, str], Union[int, str]]]:
     match day:
         case 1:
             return day01.solve
         case 4:
             return day04.solve
+        case 5:
+            return day05.solve
         case _:
             raise ValueError(f"Day {day} not implemented")
 
