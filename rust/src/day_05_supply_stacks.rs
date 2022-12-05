@@ -41,18 +41,17 @@ fn get_stacks(input: &String) -> SupplyStacks {
     let (harbor, _) = input.split_once("\n\n").unwrap();
     let harbor_rows: Vec<Vec<char>> = harbor.lines().map(|l| l.chars().collect()).collect();
     let stack_identifier_row = harbor_rows.last().unwrap();
+    let stack_count = stack_identifier_row.iter().filter(|&x| x.is_digit(10)).count();
 
-    let mut stacks: SupplyStacks = Vec::new();
-    // Reverse to get the stacks in the right order
+    // Create vector with empty stacks
+    let mut stacks: SupplyStacks = vec![Vec::new(); stack_count];
+
+    // Reverse to parse the stacks in the right order
     for i in (0..harbor_rows.len() -1 ).rev()  {
         for (column, ch) in harbor_rows[i].iter().enumerate() {
             if ch.is_alphabetic() {
                 let stack_number = stack_identifier_row[column].to_digit(10).unwrap();
-                if stack_number > stacks.len() as u32 {
-                    stacks.insert(stack_number as usize - 1, vec![*ch]);
-                } else {
-                    stacks[stack_number as usize -1].push(*ch);
-                }
+                stacks[stack_number as usize -1].push(*ch);
             }
         }
     }
