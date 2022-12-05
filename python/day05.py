@@ -20,7 +20,7 @@ def part1(stacks: SupplyStacks, moves: Moves) -> str:
     for mv in moves:
         for _ in range(0, mv.count):
             stacks[mv.to].append(stacks[mv.start].pop())
-    return "".join([x[-1] for x in stacks.values()])
+    return "".join([stacks[x][-1] for x in sorted(stacks.keys())])
 
 
 def part2(stacks: SupplyStacks, moves: Moves) -> str:
@@ -28,7 +28,7 @@ def part2(stacks: SupplyStacks, moves: Moves) -> str:
         stacks[mv.to].extend(
             reversed(list(stacks[mv.start].pop() for _ in range(0, mv.count)))
         )
-    return "".join([x[-1] for x in stacks.values()])
+    return "".join([stacks[x][-1] for x in sorted(stacks.keys())])
 
 
 def get_supply_stacks(input: str) -> SupplyStacks:
