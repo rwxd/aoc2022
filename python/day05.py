@@ -20,7 +20,7 @@ def part1(stacks: SupplyStacks, moves: Moves) -> str:
     for mv in moves:
         for _ in range(0, mv.count):
             stacks[mv.to].append(stacks[mv.start].pop())
-    return "".join([x[-1] for x in stacks.values()])
+    return "".join([x[-1] for x in sorted(stacks.values())])
 
 
 def part2(stacks: SupplyStacks, moves: Moves) -> str:
