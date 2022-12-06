@@ -3,6 +3,7 @@ mod day_02_rock_paper_scissors;
 mod day_03_rucksack_reorganization;
 mod day_04_camp_cleanup;
 mod day_05_supply_stacks;
+mod day_06_tuning_trouble;
 mod etc;
 mod input_reader;
 
@@ -35,6 +36,7 @@ fn get_day_solver(day: i32) -> fn() -> SolutionPair {
         3 => day_03_rucksack_reorganization::solve,
         4 => day_04_camp_cleanup::solve,
         5 => day_05_supply_stacks::solve,
+        6 => day_06_tuning_trouble::solve,
         _ => unimplemented!(),
     }
 }
