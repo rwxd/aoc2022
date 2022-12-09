@@ -216,20 +216,20 @@ fn build_tree(input: &String) {
 }
 
 
-fn part1(input: &String) -> i32{
+fn part1() -> i32{
     0
 }
 
 
-fn part2(input: &String) -> i32{
+fn part2() -> i32{
     0
 }
 
 
 pub fn solve() -> SolutionPair {
     let input = input_reader::read_file_in_cwd("../inputs/day07.txt");
-    let tree = build_tree(&input);
-    let result_1 = part1(&input);
-    let result_2 = part2(&input);
+    build_tree(&input);
+    let result_1 = part1();
+    let result_2 = part2();
     (Solution::I32(result_1), Solution::I32(result_2))
 }
