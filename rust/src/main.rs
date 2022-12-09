@@ -4,6 +4,7 @@ mod day_03_rucksack_reorganization;
 mod day_04_camp_cleanup;
 mod day_05_supply_stacks;
 mod day_06_tuning_trouble;
+mod day_07_no_space_left_on_device;
 mod etc;
 mod input_reader;
 
@@ -37,6 +38,7 @@ fn get_day_solver(day: i32) -> fn() -> SolutionPair {
         4 => day_04_camp_cleanup::solve,
         5 => day_05_supply_stacks::solve,
         6 => day_06_tuning_trouble::solve,
+        7 => day_07_no_space_left_on_device::solve,
         _ => unimplemented!(),
     }
 }
