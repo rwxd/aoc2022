@@ -6,6 +6,8 @@ mod day_05_supply_stacks;
 mod day_06_tuning_trouble;
 mod day_07_no_space_left_on_device;
 mod day_08_treetop_tree_house;
+mod day_09_rope_bridge;
+mod day_10_cathode_ray;
 mod etc;
 mod input_reader;
 
@@ -41,6 +43,8 @@ fn get_day_solver(day: i32) -> fn() -> SolutionPair {
         6 => day_06_tuning_trouble::solve,
         7 => day_07_no_space_left_on_device::solve,
         8 => day_08_treetop_tree_house::solve,
+        9 => day_09_rope_bridge::solve,
+        10 => day_10_cathode_ray::solve,
         _ => unimplemented!(),
     }
 }
